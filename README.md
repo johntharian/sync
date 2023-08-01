@@ -45,15 +45,17 @@ These are required for running Wav2lip
 
 ### pip install -r requirements.txt
 
-Replace [upload_dir](https://github.com/johntharian/sync/blob/ff6fb085aa2595bda3f65cffe6d0d8668a05abec/server/main.py#L58C32-L58C32) with the path to the directory you want to use for uploading files
+Replace [upload_dir](https://github.com/johntharian/sync/blob/a1511f63f5096597cd1d04aa1fc47c432396e28c/server/main.py#L58) with the path to the directory you want to use for uploading files
 
 
 Download the weights from [weights](https://iiitaphyd-my.sharepoint.com/personal/radrabha_m_research_iiit_ac_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fradrabha%5Fm%5Fresearch%5Fiiit%5Fac%5Fin%2FDocuments%2FWav2Lip%5FModels%2Fwav2lip%2Epth&parent=%2Fpersonal%2Fradrabha%5Fm%5Fresearch%5Fiiit%5Fac%5Fin%2FDocuments%2FWav2Lip%5FModels&ga=1) and paste in the server directory
 
-Modify the [command = f'cd /app/Wav2Lip && python inference.py --checkpoint_path "{checkpoint_path}" --face "{videof_path}" --audio "{audiof_path}"'](https://github.com/johntharian/sync/blob/ff6fb085aa2595bda3f65cffe6d0d8668a05abec/server/main.py#L91C8-L91C8) with the correct path to Wav2Lip 
+Modify the [checkpoint_path](https://github.com/johntharian/sync/blob/a1511f63f5096597cd1d04aa1fc47c432396e28c/server/main.py#L89)
+
+Modify the [command = f'cd /app/Wav2Lip && python inference.py --checkpoint_path "{checkpoint_path}" --face "{videof_path}" --audio "{audiof_path}"'](https://github.com/johntharian/sync/blob/a1511f63f5096597cd1d04aa1fc47c432396e28c/server/main.py#L91) with the correct path to Wav2Lip 
 
 
-The result will be stored at Wav2Lip/results/result_voice.mp4', so need to update [res_path](https://github.com/johntharian/sync/blob/ff6fb085aa2595bda3f65cffe6d0d8668a05abec/server/main.py#L98) with the correct path.
+The result will be stored at Wav2Lip/results/result_voice.mp4', so need to update [res_path](https://github.com/johntharian/sync/blob/a1511f63f5096597cd1d04aa1fc47c432396e28c/server/main.py#L98) with the correct path.
 To start the server RUN ### uvicorn main:app --reload
 
 ## Setting up frontend
