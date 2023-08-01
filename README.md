@@ -60,7 +60,7 @@ To start the server RUN ### uvicorn main:app --reload
 
 ## Setting up frontend
 
-### cd client
+### cd frontend
 ### npm i
 
 To start the app
