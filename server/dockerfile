@@ -1,0 +1,36 @@
+FROM python:3.6.13-slim
+
+
+RUN apt-get update && apt-get install -y git
+
+RUN apt-get update && apt-get install -y wget
+
+WORKDIR /app
+# RUN git clone https://github.com/Rudrabha/Wav2Lip.git
+# COPY Wav2Lip /Wav2Lip
+# RUN ls
+# WORKDIR /Wav2Lip
+
+# RUN wget "https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth" -O "Wav2Lip/face_detection/detection/sfd/s3fd.pth"
+
+
+RUN pip install --no-cache-dir librosa==0.7.0
+RUN pip install --no-cache-dir numpy==1.17.1
+RUN pip install --no-cache-dir opencv-contrib-python==4.2.0.34
+RUN pip install --no-cache-dir opencv-python==4.1.0.25
+RUN pip install --no-cache-dir torch===1.1.0 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip install --no-cache-dir torchvision==0.3.0
+RUN pip install --no-cache-dir tqdm==4.45.0
+RUN pip install --no-cache-dir numba==0.48
+RUN pip install --no-cache-dir resampy==0.3.1
+
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

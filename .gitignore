@@ -1,0 +1,6 @@
+/uploads
+/data
+/client/build
+/client/node_modules
+/server/Wav2Lip
+/server/wav2lip.pth

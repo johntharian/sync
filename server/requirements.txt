@@ -1,0 +1,8 @@
+fastapi==0.83.0
+uvicorn==0.15.0
+python-multipart
+moviepy==1.0.3
+numpy==1.19.5
+python_speech_features==0.6
+scipy==1.5.4
+
