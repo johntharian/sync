@@ -75,6 +75,7 @@ const FileUploadForm = () => {
 
   return (
     <>
+      <h1>Sync now</h1>
       <Container style={{ paddingTop: "200px" }}>
         <Row>
           <Col xs={12} md={6}>
